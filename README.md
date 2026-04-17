@@ -1,11 +1,10 @@
 Here is the complete rewritten version, formatted as raw Markdown so you can easily copy and paste it directly into your `README.md` file:
 
-````markdown
-# PyCluster 🕸️
+# Swarn&Hive 🕸️
 
 **Seamless Distributed Computing for Local Area Networks**
 
-PyCluster is a specialized Python toolkit that lets you effortlessly distribute and execute Python functions across multiple machines on the same LAN. By completely bypassing cloud dependencies and complex infrastructure setups, PyCluster delivers a fast, secure, and localized parallel computing environment right out of the box.
+Swarn&Hive is a specialized Python toolkit that lets you effortlessly distribute and execute Python functions across multiple machines on the same LAN. By completely bypassing cloud dependencies and complex infrastructure setups, Swarn&Hive delivers a fast, secure, and localized parallel computing environment right out of the box.
 
 ## ✨ Core Capabilities
 
@@ -27,18 +26,18 @@ PyCluster is a specialized Python toolkit that lets you effortlessly distribute 
 
 ```bash
 # Pull and install directly from the repository
-pip install git+[https://github.com/krishnasharma0101/pycluster.git](https://github.com/krishnasharma0101/pycluster.git)
+pip install git+[https://github.com/krishnasharma0101/Swarn&Hive.git](https://github.com/krishnasharma0101/Swarn&Hive.git)
 
 # Install including tools for development
-pip install git+[https://github.com/krishnasharma0101/pycluster.git#egg=pycluster](https://github.com/krishnasharma0101/pycluster.git#egg=pycluster)[dev]
+pip install git+[https://github.com/krishnasharma0101/Swarn&Hive.git#egg=Swarn&Hive](https://github.com/krishnasharma0101/Swarn&Hive.git#egg=Swarn&Hive)[dev]
 ````
 
 #### Method B: Local Source Installation
 
 ```bash
 # Fetch the codebase
-git clone [https://github.com/pycluster/pycluster.git](https://github.com/pycluster/pycluster.git)
-cd pycluster
+git clone [https://github.com/Swarn&Hive/Swarn&Hive.git](https://github.com/Swarn&Hive/Swarn&Hive.git)
+cd Swarn&Hive
 
 # Resolve dependencies
 pip install -r requirements.txt
@@ -51,7 +50,7 @@ pip install -e .
 
 ```bash
 # When available on the Python Package Index
-pip install pycluster
+pip install Swarn&Hive
 ```
 
 ### Sanity Check
@@ -60,10 +59,10 @@ Confirm that the library is installed and functioning:
 
 ```bash
 # Validate library import
-python -c "import pycluster; print('PyCluster is ready to go!')"
+python -c "import Swarn&Hive; print('Swarn&Hive is ready to go!')"
 
 # Test the command-line interface
-python -m pycluster.cli --help
+python -m Swarn&Hive.cli --help
 ```
 
 ### Core Workflow
@@ -72,10 +71,10 @@ python -m pycluster.cli --help
 
 ```bash
 # Launch the host on the default port (8888)
-pycluster host
+Swarn&Hive host
 
 # Alternatively, define a specific port
-pycluster host --port 9999
+Swarn&Hive host --port 9999
 ```
 
 *Note: The terminal will output a One-Time Password (OTP). Keep this handy for your worker nodes.*
@@ -86,16 +85,16 @@ Execute this on other computers connected to the same network:
 
 ```bash
 # Link a worker to the host (swap with your actual IP and generated OTP)
-pycluster join --host 192.168.1.100 --key ABC12345
+Swarn&Hive join --host 192.168.1.100 --key ABC12345
 
 # Optionally assign a custom identifier to the worker
-pycluster join --host 192.168.1.100 --key ABC12345 --worker-id processing-node-alpha
+Swarn&Hive join --host 192.168.1.100 --key ABC12345 --worker-id processing-node-alpha
 ```
 
 #### 3\. Execute Distributed Code
 
 ```python
-from pycluster import remote, set_host, Host
+from Swarn&Hive import remote, set_host, Host
 import asyncio
 
 # Initialize the host controller
@@ -138,7 +137,7 @@ asyncio.run(run_cluster())
 
 ### System Layout
 
-The PyCluster ecosystem relies on three foundational pillars:
+The Swarn&Hive ecosystem relies on three foundational pillars:
 
 1.  **Dispatcher (Host)**: The brain of the operation that tracks available nodes and delegates tasks.
 2.  **Executor Nodes (Workers)**: The connected devices that accept workloads, process them, and return results.
@@ -155,29 +154,29 @@ We take local network security seriously:
 
 ### Environment Configuration
 
-Customize PyCluster's behavior via environment variables:
+Customize Swarn&Hive's behavior via environment variables:
 
 ```bash
 # Network Bindings
-export PYCLUSTER_HOST_PORT=8888
-export PYCLUSTER_WORKER_PORT=8889
-export PYCLUSTER_HOST_ADDRESS="0.0.0.0"
+export Swarn&Hive_HOST_PORT=8888
+export Swarn&Hive_WORKER_PORT=8889
+export Swarn&Hive_HOST_ADDRESS="0.0.0.0"
 
 # Security Tolerances
-export PYCLUSTER_KEY_SIZE=32
-export PYCLUSTER_OTP_LENGTH=8
+export Swarn&Hive_KEY_SIZE=32
+export Swarn&Hive_OTP_LENGTH=8
 
 # Transfer Constraints
-export PYCLUSTER_CHUNK_SIZE=8192
-export PYCLUSTER_MAX_FILE_SIZE=104857600  # Caps at 100MB
+export Swarn&Hive_CHUNK_SIZE=8192
+export Swarn&Hive_MAX_FILE_SIZE=104857600  # Caps at 100MB
 
 # Timing Thresholds
-export PYCLUSTER_CONNECTION_TIMEOUT=30.0
-export PYCLUSTER_TASK_TIMEOUT=300.0
-export PYCLUSTER_HEARTBEAT_INTERVAL=10.0
+export Swarn&Hive_CONNECTION_TIMEOUT=30.0
+export Swarn&Hive_TASK_TIMEOUT=300.0
+export Swarn&Hive_HEARTBEAT_INTERVAL=10.0
 
 # Verbosity
-export PYCLUSTER_LOG_LEVEL="INFO"
+export Swarn&Hive_LOG_LEVEL="INFO"
 ```
 
 ### Module Reference
@@ -185,7 +184,7 @@ export PYCLUSTER_LOG_LEVEL="INFO"
 #### Interacting with the Host
 
 ```python
-from pycluster import Host
+from Swarn&Hive import Host
 
 # Boot up the dispatcher
 master = Host(port=8888)
@@ -204,7 +203,7 @@ active_nodes = master.get_workers_info()
 #### Interacting with a Worker
 
 ```python
-from pycluster import Worker
+from Swarn&Hive import Worker
 
 # Initialize and connect a node
 node = Worker(
@@ -219,7 +218,7 @@ await node.start()
 #### The `@remote` API
 
 ```python
-from pycluster import remote
+from Swarn&Hive import remote
 
 @remote()  # Dispatches to the next available node
 def merge_data(a, b):
@@ -234,13 +233,13 @@ def secure_process(data):
 
 ```bash
 # Initialize a dispatcher
-pycluster host [--port PORT]
+Swarn&Hive host [--port PORT]
 
 # Attach a machine to a cluster
-pycluster join --host TARGET_IP --key OTP [--port PORT] [--worker-id CUSTOM_ID]
+Swarn&Hive join --host TARGET_IP --key OTP [--port PORT] [--worker-id CUSTOM_ID]
 
 # View cluster topology (Upcoming)
-pycluster list
+Swarn&Hive list
 ```
 
 ## 🔧 Pro Features
@@ -248,7 +247,7 @@ pycluster list
 ### Moving Files
 
 ```python
-from pycluster.network import FileTransfer
+from Swarn&Hive.network import FileTransfer
 
 # Push payloads to a worker node
 uploader = FileTransfer(socket_manager)
@@ -261,7 +260,7 @@ await uploader.send_file_with_progress(
 ### Bring Your Own Keys (BYOK)
 
 ```python
-from pycluster.network import EncryptionManager
+from Swarn&Hive.network import EncryptionManager
 
 # Inject custom cryptography
 custom_key = EncryptionManager.generate_key()
@@ -271,7 +270,7 @@ cipher = EncryptionManager(custom_key)
 ### Fault Tolerance
 
 ```python
-from pycluster import remote
+from Swarn&Hive import remote
 
 @remote()
 def volatile_task():
@@ -320,20 +319,20 @@ pip install -e ".[dev]"
 pytest
 
 # Generate coverage reports
-pytest --cov=pycluster
+pytest --cov=Swarn&Hive
 ```
 
 ### Maintaining Code Standards
 
 ```bash
 # Auto-format
-black pycluster/
+black Swarn&Hive/
 
 # Linting checks
-flake8 pycluster/
+flake8 Swarn&Hive/
 
 # Static typing validation
-mypy pycluster/
+mypy Swarn&Hive/
 ```
 
 ## 🤝 Get Involved
@@ -350,8 +349,8 @@ Distributed under the MIT License. Reference the [LICENSE](https://www.google.co
 
 ## 🆘 Help and Community
 
-  - **Bug Reports**: [GitHub Issues Tracker](https://github.com/krishnasharma0101/pycluster/issues)
-  - **Chat/Questions**: [GitHub Discussions](https://github.com/krishnasharma0101/pycluster/discussions)
+  - **Bug Reports**: [GitHub Issues Tracker](https://github.com/krishnasharma0101/Swarn&Hive/issues)
+  - **Chat/Questions**: [GitHub Discussions](https://github.com/krishnasharma0101/Swarn&Hive/discussions)
   - **Official Docs**: (Pending)
 
 ## 🎯 Future Milestones
@@ -370,11 +369,11 @@ Distributed under the MIT License. Reference the [LICENSE](https://www.google.co
 ### Scenario A: The Basics
 
 ```python
-# Terminal 1: run `pycluster host --port 8888`
+# Terminal 1: run `Swarn&Hive host --port 8888`
 # Note the OTP!
 
 # Terminal 2 (Python code):
-from pycluster import remote, set_host, Host
+from Swarn&Hive import remote, set_host, Host
 import asyncio
 
 master = Host(port=8888)
@@ -395,26 +394,26 @@ asyncio.run(execute())
 
 ```bash
 # Terminal A: Dispatcher
-pycluster host --port 8888
+Swarn&Hive host --port 8888
 
 # Terminal B: Node 1
-pycluster join --host 127.0.0.1 --port 8888 --key <OTP> --worker-id node-primary
+Swarn&Hive join --host 127.0.0.1 --port 8888 --key <OTP> --worker-id node-primary
 
 # Terminal C: Node 2  
-pycluster join --host 127.0.0.1 --port 8888 --key <OTP> --worker-id node-secondary
+Swarn&Hive join --host 127.0.0.1 --port 8888 --key <OTP> --worker-id node-secondary
 ```
 
 ### Scenario C: True Network Distribution
 
 ```bash
 # Executed on the primary server (IP: 192.168.1.100)
-pycluster host --port 8888
+Swarn&Hive host --port 8888
 
 # Executed on physical machine A
-pycluster join --host 192.168.1.100 --port 8888 --key <OTP>
+Swarn&Hive join --host 192.168.1.100 --port 8888 --key <OTP>
 
 # Executed on physical machine B
-pycluster join --host 192.168.1.100 --port 8888 --key <OTP>
+Swarn&Hive join --host 192.168.1.100 --port 8888 --key <OTP>
 ```
 
 -----
